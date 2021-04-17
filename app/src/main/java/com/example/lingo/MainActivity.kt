@@ -3,9 +3,7 @@ package com.example.lingo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import com.example.lingo.fragments.FavouritesFragment
-import com.example.lingo.fragments.HomeFragment
-import com.example.lingo.fragments.SettingsFragment
+import com.example.lingo.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
@@ -15,8 +13,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val homeFragment = HomeFragment()
-        val favouritesFragment = FavouritesFragment()
-        val settingsFragment = SettingsFragment()
+        val accountFragment = AccountFragment()
+        val sertificateFragment = SertificateFragment()
 
         makeCurrentFragment(homeFragment)
 
@@ -25,8 +23,8 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener{
             when (it.itemId){
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
-                R.id.ic_favorite -> makeCurrentFragment(favouritesFragment)
-                R.id.ic_settings -> makeCurrentFragment(settingsFragment)
+                R.id.ic_person -> makeCurrentFragment(accountFragment)
+                R.id.ic_whatshot -> makeCurrentFragment(sertificateFragment)
             }
             true
         }
