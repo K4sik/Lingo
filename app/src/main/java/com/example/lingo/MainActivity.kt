@@ -1,7 +1,10 @@
 package com.example.lingo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
+import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.lingo.fragments.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -29,6 +32,14 @@ class MainActivity : AppCompatActivity() {
             true
         }
 
+
+//        val bt_button: Button = findViewById(R.id.bt_button)
+//
+//        bt_button.setOnClickListener{
+//            val i = Intent(this, LevelActivity::class.java)
+//            startActivity(i)
+//        }
+
     }
 
     private fun makeCurrentFragment(fragment: Fragment) {
@@ -37,4 +48,5 @@ class MainActivity : AppCompatActivity() {
             commit()
         }
     }
+
 }

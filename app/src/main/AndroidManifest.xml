@@ -9,6 +9,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lingo">
+        <activity
+            android:name=".activities.PodcastActivity"
+            android:parentActivityName=".activities.LevelActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LevelActivity" />
+        </activity>
+        <activity
+            android:name=".activities.PracticeActivity"
+            android:parentActivityName=".activities.LevelActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LevelActivity" />
+        </activity>
+        <activity
+            android:name=".activities.TheoryActivity"
+            android:parentActivityName=".activities.LevelActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LevelActivity" />
+        </activity>
+        <activity
+            android:name=".activities.LevelActivity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
