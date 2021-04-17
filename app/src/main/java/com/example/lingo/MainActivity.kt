@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
         val homeFragment = HomeFragment()
         val accountFragment = AccountFragment()
-        val sertificateFragment = SertificateFragment()
+        val sertificateFragment = CertificateFragment()
 
         makeCurrentFragment(homeFragment)
 
