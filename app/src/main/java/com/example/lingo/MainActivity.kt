@@ -17,7 +17,8 @@ class MainActivity : AppCompatActivity() {
 
         val homeFragment = HomeFragment()
         val accountFragment = AccountFragment()
-        val sertificateFragment = CertificateFragment()
+        val certificateFragment = CertificateFragment()
+        val settingsFragment = SettingsFragment()
 
         makeCurrentFragment(homeFragment)
 
@@ -27,7 +28,8 @@ class MainActivity : AppCompatActivity() {
             when (it.itemId){
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
                 R.id.ic_person -> makeCurrentFragment(accountFragment)
-                R.id.ic_whatshot -> makeCurrentFragment(sertificateFragment)
+                R.id.ic_whatshot -> makeCurrentFragment(certificateFragment)
+                R.id.ic_settings -> makeCurrentFragment(settingsFragment)
             }
             true
         }
