@@ -59,9 +59,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
         recyclerView.setLayoutManager(LinearLayoutManager(context))
         val dataholder = arrayListOf<HomeLevels>()
 
-        dataholder.add(HomeLevels(R.drawable.ic_people, R.drawable.ic_near_me, "Write to us", R.drawable.ic_arrow_forward))
-        dataholder.add(HomeLevels(R.drawable.ic_people, R.drawable.ic_star, "Rate us on app store", R.drawable.ic_arrow_forward))
-        dataholder.add(HomeLevels(R.drawable.ic_people, R.drawable.ic_people, "About us", R.drawable.ic_arrow_forward))
+        dataholder.add(HomeLevels(R.drawable.ic_a1, R.drawable.ic_basic, "Basic", R.drawable.ic_arrow_forward))
+        dataholder.add(HomeLevels(R.drawable.ic_a2, R.drawable.ic_pre_intermediate, "Pre-Intermediate", R.drawable.ic_arrow_forward))
+        dataholder.add(HomeLevels(R.drawable.ic_b1, R.drawable.ic_intermediate, "Intermediate", R.drawable.ic_arrow_forward))
+        dataholder.add(HomeLevels(R.drawable.ic_b2, R.drawable.ic_upper_intermediate, "Upper-Intermediate", R.drawable.ic_arrow_forward))
+        dataholder.add(HomeLevels(R.drawable.ic_c1, R.drawable.ic_advanced, "Advanced", R.drawable.ic_arrow_forward))
 
         recyclerView.adapter = HomeLevelsAdapter(dataholder)
 
