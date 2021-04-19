@@ -1,5 +1,7 @@
 package com.example.lingo.adapters;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lingo.R;
+import com.example.lingo.activities.Level2Activity;
 import com.example.lingo.models.HomeLevels;
 
 import java.util.ArrayList;
@@ -42,8 +45,8 @@ public class HomeLevelsAdapter extends RecyclerView.Adapter<HomeLevelsAdapter.Vi
         return dataholder.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder
-    {
+    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private final Context context;
         ImageView img;
         ImageView imgTitle;
         TextView header;
@@ -51,11 +54,30 @@ public class HomeLevelsAdapter extends RecyclerView.Adapter<HomeLevelsAdapter.Vi
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
+            context = itemView.getContext();
             img = itemView.findViewById(R.id.iv_image);
             imgTitle = itemView.findViewById(R.id.iv_imageTitle);
             header = itemView.findViewById(R.id.tv_title);
             imgStat = itemView.findViewById(R.id.iv_arrow);
+
+//            itemView.setClickable(true);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+
+            final Intent intent;
+            switch (getAdapterPosition()){
+
+                default:
+                    intent =  new Intent(context, Level2Activity.class);
+                    break;
+            }
+            context.startActivity(intent);
+        }
+
+
     }
 
 
