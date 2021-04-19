@@ -51,9 +51,9 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
-            img=itemView.findViewById(R.id.iv_image);
-            header=itemView.findViewById(R.id.tv_title);
-            imgStat=itemView.findViewById(R.id.iv_arrow);
+            img = itemView.findViewById(R.id.iv_image);
+            header = itemView.findViewById(R.id.tv_title);
+            imgStat = itemView.findViewById(R.id.iv_arrow);
         }
     }
 }

@@ -71,13 +71,13 @@ public class SettingsFragment extends Fragment {
     {
         // Inflate the layout for this fragment
         View view=inflater.inflate(R.layout.fragment_settings, container, false);
-        recyclerView=view.findViewById(R.id.rv_recyclerView);
+        recyclerView = view.findViewById(R.id.rv_recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        dataholder=new ArrayList<>();
+        dataholder = new ArrayList<>();
 
-        dataholder.add(new Settings(R.drawable.ic_favorite, "Angular", R.drawable.ic_arrow_forward));
-        dataholder.add(new Settings(R.drawable.ic_favorite, "C Programming", R.drawable.ic_arrow_forward));
-        dataholder.add(new Settings(R.drawable.ic_favorite, "C++ Programming", R.drawable.ic_arrow_forward));
+        dataholder.add(new Settings(R.drawable.ic_near_me, "Write to us", R.drawable.ic_arrow_forward));
+        dataholder.add(new Settings(R.drawable.ic_star, "Rate us on app store", R.drawable.ic_arrow_forward));
+        dataholder.add(new Settings(R.drawable.ic_people, "About us", R.drawable.ic_arrow_forward));
 
 
         recyclerView.setAdapter(new SettingsAdapter(dataholder));
