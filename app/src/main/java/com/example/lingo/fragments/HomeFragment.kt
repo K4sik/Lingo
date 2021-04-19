@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
 import com.example.lingo.R
+import com.example.lingo.activities.Level2Activity
 import com.example.lingo.activities.LevelActivity
 
 
@@ -45,7 +46,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         val bt_button: Button = rootView.findViewById(R.id.bt_button)
         bt_button.setOnClickListener{
-            val i = Intent(activity, LevelActivity::class.java)
+            val i = Intent(activity, Level2Activity::class.java)
             startActivity(i)
         }
 
