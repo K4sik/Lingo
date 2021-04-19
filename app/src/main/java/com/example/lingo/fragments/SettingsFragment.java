@@ -75,9 +75,9 @@ public class SettingsFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         dataholder=new ArrayList<>();
 
-        dataholder.add(new Settings(R.drawable.ic_favorite,"Angular"));
-        dataholder.add(new Settings(R.drawable.ic_favorite,"C Programming"));
-        dataholder.add(new Settings(R.drawable.ic_favorite,"C++ Programming"));
+        dataholder.add(new Settings(R.drawable.ic_favorite, "Angular", R.drawable.ic_arrow_forward));
+        dataholder.add(new Settings(R.drawable.ic_favorite, "C Programming", R.drawable.ic_arrow_forward));
+        dataholder.add(new Settings(R.drawable.ic_favorite, "C++ Programming", R.drawable.ic_arrow_forward));
 
 
         recyclerView.setAdapter(new SettingsAdapter(dataholder));

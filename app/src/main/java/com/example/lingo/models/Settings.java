@@ -6,12 +6,15 @@ public class Settings {
 
     private String title;
 
+    private int imgStat;
+
     public Settings() {
     }
 
-    public Settings(int img, String title) {
+    public Settings(int img, String title, int imgStat) {
         this.img = img;
         this.title = title;
+        this.imgStat = imgStat;
     }
 
     public int getImg() {
@@ -28,5 +31,13 @@ public class Settings {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public int getImgStat() {
+        return imgStat;
+    }
+
+    public void setImgStat(int imgStat) {
+        this.imgStat = imgStat;
     }
 }

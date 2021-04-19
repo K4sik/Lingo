@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lingo.R;
-import com.example.lingo.models.Setting;
 import com.example.lingo.models.Settings;
 
 import java.util.ArrayList;
@@ -36,6 +35,7 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
     {
         holder.img.setImageResource(dataholder.get(position).getImg());
         holder.header.setText(dataholder.get(position).getTitle());
+        holder.imgStat.setImageResource(dataholder.get(position).getImgStat());
     }
 
     @Override
@@ -47,11 +47,13 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
     {
         ImageView img;
         TextView header;
+        ImageView imgStat;
         public ViewHolder(@NonNull View itemView)
         {
             super(itemView);
             img=itemView.findViewById(R.id.iv_image);
             header=itemView.findViewById(R.id.tv_title);
+            imgStat=itemView.findViewById(R.id.iv_arrow);
         }
     }
 }
