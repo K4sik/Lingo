@@ -1,15 +1,17 @@
 package com.example.lingo.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.lingo.R
-import com.example.lingo.activities.Level2Activity
-import com.example.lingo.activities.LevelActivity
+import com.example.lingo.adapters.HomeLevelsAdapter
+import com.example.lingo.adapters.SettingsAdapter
+import com.example.lingo.models.HomeLevels
+import com.example.lingo.models.Settings
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -44,14 +46,26 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
 
-        val bt_button: Button = rootView.findViewById(R.id.bt_button)
-        bt_button.setOnClickListener{
-            val i = Intent(activity, Level2Activity::class.java)
-            startActivity(i)
-        }
+//        val bt_button: Button = rootView.findViewById(R.id.bt_button)
+//        bt_button.setOnClickListener{
+//            val i = Intent(activity, Level2Activity::class.java)
+//            startActivity(i)
+//        }
 
 
-        return rootView
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_home, container, false)
+        val recyclerView: RecyclerView = view.findViewById(R.id.rv_recyclerView)
+        recyclerView.setLayoutManager(LinearLayoutManager(context))
+        val dataholder = arrayListOf<HomeLevels>()
+
+        dataholder.add(HomeLevels(R.drawable.ic_people, R.drawable.ic_near_me, "Write to us", R.drawable.ic_arrow_forward))
+        dataholder.add(HomeLevels(R.drawable.ic_people, R.drawable.ic_star, "Rate us on app store", R.drawable.ic_arrow_forward))
+        dataholder.add(HomeLevels(R.drawable.ic_people, R.drawable.ic_people, "About us", R.drawable.ic_arrow_forward))
+
+        recyclerView.adapter = HomeLevelsAdapter(dataholder)
+
+        return view
 
     }
 
