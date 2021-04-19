@@ -3,12 +3,18 @@ package com.example.lingo.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.lingo.R;
+import com.example.lingo.adapters.SettingsAdapter;
+import com.example.lingo.models.Settings;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +31,8 @@ public class SettingsFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    RecyclerView recyclerView;
+    ArrayList<Settings> dataholder;
 
     public SettingsFragment() {
         // Required empty public constructor
@@ -36,7 +44,7 @@ public class SettingsFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SettingsFragment.
+     * @return A new instance of fragment datafragment.
      */
     // TODO: Rename and change types and number of parameters
     public static SettingsFragment newInstance(String param1, String param2) {
@@ -59,8 +67,21 @@ public class SettingsFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             Bundle savedInstanceState)
+    {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view=inflater.inflate(R.layout.fragment_settings, container, false);
+        recyclerView=view.findViewById(R.id.rv_recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        dataholder=new ArrayList<>();
+
+        dataholder.add(new Settings(R.drawable.ic_favorite,"Angular"));
+        dataholder.add(new Settings(R.drawable.ic_favorite,"C Programming"));
+        dataholder.add(new Settings(R.drawable.ic_favorite,"C++ Programming"));
+
+
+        recyclerView.setAdapter(new SettingsAdapter(dataholder));
+
+        return view;
     }
 }

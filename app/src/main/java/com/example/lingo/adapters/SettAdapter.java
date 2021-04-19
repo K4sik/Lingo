@@ -1,6 +1,5 @@
 package com.example.lingo.adapters;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,27 +13,25 @@ import com.example.lingo.models.Settings;
 
 import java.util.List;
 
-public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHolder> {
+public class SettAdapter extends RecyclerView.Adapter<SettAdapter.ViewHolder> {
 
-    private final LayoutInflater inflater;
     private final List<Settings> settings;
 
-    public SettingsAdapter(Context context, List<Settings> settings) {
+    public SettAdapter(List<Settings> settings) {
         this.settings = settings;
-        this.inflater = LayoutInflater.from(context);
     }
 
     @Override
-    public SettingsAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public SettAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        View view = inflater.inflate(R.layout.setting_item_layout, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.setting_item_layout, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(SettingsAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(SettAdapter.ViewHolder holder, int position) {
         Settings setting = settings.get(position);
-        holder.imageView.setImageResource(setting.getImageResource());
+        holder.imageView.setImageResource(setting.getImg());
         holder.title.setText(setting.getTitle());
     }
 
@@ -48,8 +45,8 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
         final TextView title;
         ViewHolder(View view){
             super(view);
-            imageView = (ImageView)view.findViewById(R.id.iv_image);
-            title = (TextView) view.findViewById(R.id.tv_title);
+            imageView = view.findViewById(R.id.iv_image);
+            title = view.findViewById(R.id.tv_title);
         }
     }
 }
