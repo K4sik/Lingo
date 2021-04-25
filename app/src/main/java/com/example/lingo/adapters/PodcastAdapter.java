@@ -2,6 +2,7 @@ package com.example.lingo.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -68,42 +69,44 @@ public class PodcastAdapter extends RecyclerView.Adapter<PodcastAdapter.ViewHold
         @Override
         public void onClick(View v) {
 
-            Intent intent;
+            Intent intent = null;
 
             switch (getAdapterPosition()){
 
                 case 0:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=wnHW6o8WMas&t=11s&ab_channel=BenLionelScott"));
                     break;
 
                 case 1:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=zzfREEPbUsA&ab_channel=BenLionelScott"));
                     break;
 
                 case 2:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=QTB1YiWxxKU&ab_channel=BenLionelScott"));
                     break;
 
                 case 3:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=MZSZtsaMsaI&t=236s&ab_channel=Motivation2Study"));
                     break;
 
                 case 4:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=8zy_3lRR8sc&ab_channel=Motivation2Study"));
                     break;
 
                 case 5:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=PfykaYKS5tY&t=466s&ab_channel=Motivation2Study"));
                     break;
 
                 case 6:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=CR_o8pZNFlY&ab_channel=Motivation2Study"));
                     break;
 
                 default:
-
+                    intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=XnJa6tK2ack&ab_channel=BenLionelScott"));
                     break;
             }
+
+            context.startActivity(intent);
         }
     }
 }

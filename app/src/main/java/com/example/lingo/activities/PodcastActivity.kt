@@ -19,7 +19,7 @@ class PodcastActivity : AppCompatActivity() {
         val dataholder = arrayListOf<Podcast>()
 
         dataholder.add(Podcast(R.drawable.crime_junkie, "NO EXCUSES", "Best Motivational Video", R.drawable.ic_arrow_forward))
-        dataholder.add(Podcast(R.drawable.crime_junkie, "I WILL NEVER GIVE UP", "Very powerful Motivational Video", R.drawable.ic_arrow_forward))
+        dataholder.add(Podcast(R.drawable.crime_junkie, "WHEN IT HURTS", "Very powerful Motivational Video", R.drawable.ic_arrow_forward))
         dataholder.add(Podcast(R.drawable.crime_junkie, "STOP WASTING TIME", "Best Motivational Video", R.drawable.ic_arrow_forward))
         dataholder.add(Podcast(R.drawable.crime_junkie, "START TODAY NOT TOMORROW", "Best Motivational Video", R.drawable.ic_arrow_forward))
         dataholder.add(Podcast(R.drawable.cold, "STOP SCROLLING START DOING", "New Motivational Video", R.drawable.ic_arrow_forward))
