@@ -1,5 +1,9 @@
 package com.example.lingo.fragments;
 
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
@@ -11,8 +15,10 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.core.app.NotificationCompat;
 import androidx.fragment.app.Fragment;
 
+import com.example.lingo.MainActivity;
 import com.example.lingo.R;
 
 import java.io.File;
@@ -111,6 +117,25 @@ public class CertificateFragment extends Fragment {
                     e.printStackTrace();
                 }
 
+                String message = "test File Downloaded";
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(
+                        CertificateFragment.this.getActivity().getBaseContext()
+                )
+                        .setSmallIcon(R.drawable.ic_file_download)
+                        .setContentTitle("File Downloaded")
+                        .setContentText(message)
+                        .setAutoCancel(true);
+
+                Intent intent = new Intent(CertificateFragment.this.getActivity().getBaseContext(),
+                        MainActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                intent.putExtra("message", message);
+
+                PendingIntent pendingIntent = PendingIntent.getActivity(CertificateFragment.this.getActivity().getBaseContext(), 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+                builder.setContentIntent(pendingIntent);
+
+                NotificationManager notificationManager = (NotificationManager) getContext().getSystemService(Context.NOTIFICATION_SERVICE);
+                notificationManager.notify(0, builder.build());
             }
         });
 
