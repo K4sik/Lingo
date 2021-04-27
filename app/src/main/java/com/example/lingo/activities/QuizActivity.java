@@ -57,25 +57,25 @@ public class QuizActivity extends AppCompatActivity implements View.OnClickListe
 
         mQuestionList = new ArrayList<Question>();
 
-        mQuestionList.add(new Question(1,"questionOne","one","two","three","four",2 ));
+        mQuestionList.add(new Question(1,"We ________ to Spain every summer.","fly","flies","flys","fils",1 ));
 
-        mQuestionList.add(new Question(2, "questionTwo", "one", "two", "three", "four", 3));
+        mQuestionList.add(new Question(2, "She ________ in Florida.", "live", "livees", "lives", "", 3));
 
-        mQuestionList.add(new Question(3, "questionThree", "one", "two", "three", "four", 1));
+        mQuestionList.add(new Question(3, "My mother ________ eggs for breakfast every morning.", "fries", "fry", "frys", "frieys", 1));
 
-        mQuestionList.add(new Question(4, "questionFour", "one", "two", "three", "four", 4));
+        mQuestionList.add(new Question(4, "John ________ very hard in class, but I don't think he'll pass the course.", "trys", "try", "tries", "tryes", 3));
 
-        mQuestionList.add(new Question(5, "questionFive", "one", "two", "three", "four", 2));
+        mQuestionList.add(new Question(5, "The bank ________ at four o'clock.", "closes", "closies", "close", "closed", 1));
 
-        mQuestionList.add(new Question(6, "questionOne", "one", "two", "three", "four", 1));
+        mQuestionList.add(new Question(6, "My best friend ________ to me every week.", "writies", "writes", "write", "wrote", 2));
 
-        mQuestionList.add(new Question(7, "questionTwo", "one", "two", "three", "four", 1));
+        mQuestionList.add(new Question(7, "My life is so boring -- I just ________ TV every night.", "watchies", "watches", "watch", "watchees", 3));
 
-        mQuestionList.add(new Question(8, "questionThree", "one", "two", "three", "four", 2));
+        mQuestionList.add(new Question(8, "I ________ in a bank.", "workes", "works", "work", "working", 3));
 
-        mQuestionList.add(new Question(9, "questionFour", "one", "two", "three", "four", 3));
+        mQuestionList.add(new Question(9, "It ________ almost every day in Manchester.", "rain", "raines", "rains", "rainers", 3));
 
-        mQuestionList.add(new Question(10,"questionFive","one","two","three","four",4));
+        mQuestionList.add(new Question(10,"Jo is so smart that she ________ every exam without even trying.","passed","pass","passies","passes",4));
 
         setQuestion();
 
