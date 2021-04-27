@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lingo.R;
+import com.example.lingo.activities.PresentSimpleActivity;
 import com.example.lingo.models.Theory;
 
 import java.util.ArrayList;
@@ -70,10 +71,10 @@ public class TheoryAdapter extends RecyclerView.Adapter<TheoryAdapter.ViewHolder
             switch (getAdapterPosition()){
 
                 default:
-//                    intent =  new Intent(context, PresentSimpleActivity.class);
+                    intent =  new Intent(context, PresentSimpleActivity.class);
                     break;
             }
-//            context.startActivity(intent);
+            context.startActivity(intent);
         }
     }
 }

@@ -14,6 +14,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lingo">
+        <activity android:name=".activities.PresentSimpleActivity"
+            android:parentActivityName=".activities.TheoryActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.TheoryActivity" />
+        </activity>
         <activity android:name=".activities.QuizActivity" />
         <activity
             android:name=".activities.Level2Activity"
