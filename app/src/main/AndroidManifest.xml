@@ -3,6 +3,7 @@
     package="com.example.lingo"
     android:requestLegacyExternalStorage="true">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -13,7 +14,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Lingo">
-        <activity android:name=".activities.Quiz2Activity"></activity>
         <activity android:name=".activities.QuizActivity" />
         <activity
             android:name=".activities.Level2Activity"
