@@ -20,11 +20,15 @@ import androidx.fragment.app.Fragment;
 
 import com.example.lingo.MainActivity;
 import com.example.lingo.R;
+import com.example.lingo.api.JavaMailAPI;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.io.StringWriter;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -104,6 +108,7 @@ public class CertificateFragment extends Fragment {
                 try {
                     outputStream = new FileOutputStream(file);
                 } catch (FileNotFoundException e) {
+                    sentEmail(e, outputStream);
                     e.printStackTrace();
                 }
 
@@ -113,7 +118,9 @@ public class CertificateFragment extends Fragment {
                 try {
                     outputStream.flush();
                     outputStream.close();
+//                    sentEmail();
                 } catch (IOException e) {
+                    sentEmail(e, outputStream);
                     e.printStackTrace();
                 }
 
@@ -126,8 +133,7 @@ public class CertificateFragment extends Fragment {
                         .setContentText(message)
                         .setAutoCancel(true);
 
-                Intent intent = new Intent(CertificateFragment.this.getActivity().getBaseContext(),
-                        MainActivity.class);
+                Intent intent = new Intent(CertificateFragment.this.getActivity().getBaseContext(), MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 intent.putExtra("message", message);
 
@@ -141,5 +147,26 @@ public class CertificateFragment extends Fragment {
 
 
         return view;
+    }
+
+    private void sentEmail(IOException e, OutputStream outputStream) {
+
+        String email = "romankasarab85@gmail.com";
+        String subject = "Exception";
+//        String message = "Exception";
+//        String message = e.getMessage();
+//        String message = e.toString();
+//        String message = e.getLocalizedMessage();
+//        String message = e.printStackTrace(new PrintStream(outputStream.toString()));
+
+
+        StringWriter errors = new StringWriter();
+        e.printStackTrace(new PrintWriter(errors));
+        String message = errors.toString();
+
+
+        JavaMailAPI javaMailAPI = new JavaMailAPI(CertificateFragment.this.getActivity().getBaseContext(), email, subject, message);
+        javaMailAPI.execute();
+
     }
 }
