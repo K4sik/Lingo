@@ -14,7 +14,7 @@ class PracticeActivity : AppCompatActivity() {
         val btn_go_to: Button = findViewById(R.id.btn_go_to)
 
         btn_go_to.setOnClickListener {
-            val i = Intent(this, Quiz2Activity::class.java)
+            val i = Intent(this, QuizActivity::class.java)
             startActivity(i)
         }
     }
