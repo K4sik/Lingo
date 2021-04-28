@@ -26,7 +26,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
@@ -108,7 +107,7 @@ public class CertificateFragment extends Fragment {
                 try {
                     outputStream = new FileOutputStream(file);
                 } catch (FileNotFoundException e) {
-                    sentEmail(e, outputStream);
+                    sentEmail(e);
                     e.printStackTrace();
                 }
 
@@ -120,11 +119,11 @@ public class CertificateFragment extends Fragment {
                     outputStream.close();
 //                    sentEmail();
                 } catch (IOException e) {
-                    sentEmail(e, outputStream);
+                    sentEmail(e);
                     e.printStackTrace();
                 }
 
-                String message = "test File Downloaded";
+                String message = String.valueOf(file);
                 NotificationCompat.Builder builder = new NotificationCompat.Builder(
                         CertificateFragment.this.getActivity().getBaseContext()
                 )
@@ -149,7 +148,7 @@ public class CertificateFragment extends Fragment {
         return view;
     }
 
-    private void sentEmail(IOException e, OutputStream outputStream) {
+    private void sentEmail(IOException e) {
 
         String email = "romankasarab85@gmail.com";
         String subject = "Exception";
