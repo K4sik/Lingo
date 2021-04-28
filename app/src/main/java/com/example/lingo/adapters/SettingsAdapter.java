@@ -1,7 +1,9 @@
 package com.example.lingo.adapters;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,9 +14,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lingo.R;
-import com.example.lingo.activities.PodcastActivity;
-import com.example.lingo.activities.PracticeActivity;
-import com.example.lingo.activities.TheoryActivity;
 import com.example.lingo.models.Settings;
 
 import java.util.ArrayList;
@@ -83,7 +82,13 @@ public class SettingsAdapter extends RecyclerView.Adapter<SettingsAdapter.ViewHo
                     break;
 
                 case 1:
-
+                    try {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("market://details?id=" + "com.android.store")));
+                    } catch (ActivityNotFoundException e) {
+                        context.startActivity(new Intent(Intent.ACTION_VIEW,
+                                Uri.parse("http://play.google.com/store/apps/details?id=" + context.getPackageName())));
+                    }
                     break;
 
                 default:

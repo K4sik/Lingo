@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
         bottom_navigation.setOnNavigationItemSelectedListener{
             when (it.itemId){
                 R.id.ic_home -> makeCurrentFragment(homeFragment)
-                R.id.ic_person -> makeCurrentFragment(accountFragment)
+//                R.id.ic_person -> makeCurrentFragment(accountFragment)
                 R.id.ic_whatshot -> makeCurrentFragment(certificateFragment)
                 R.id.ic_settings -> makeCurrentFragment(settingsFragment)
             }
